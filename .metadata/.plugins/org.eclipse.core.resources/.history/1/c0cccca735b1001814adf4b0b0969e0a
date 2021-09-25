@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		double depth = 40.567;
+		int delta;
+		
+		if (depth > 36.238)
+			delta = 100;
+		else
+			System.out.println("WARNING: Delta is being reset to ZERO");
+				
+		
+		
+		
+	}	
+}

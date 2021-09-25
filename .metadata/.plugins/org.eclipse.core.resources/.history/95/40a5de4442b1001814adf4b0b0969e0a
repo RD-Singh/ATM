@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	private static final String charAt = null;
+
+	public static void main(String[] args)
+	{
+		
+		Scanner scan = new Scanner(System.in);
+		int count = 0;
+		
+		
+		
+		System.out.println("Enter a numeric grade: ");
+		count = scan.nextInt();
+		
+		while (count <= 5)
+		{
+			System.out.println(count);
+			count++;
+			
+		
+		
+		
+				
+				
+		}
+		
+		
+		
+	}	
+}

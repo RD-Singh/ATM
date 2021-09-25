@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		int num1, num2, num3, min = 0;
+		Random generator = new Random();
+		
+		num1 = generator.nextInt(7) + 600;
+		num2 = generator.nextInt(642) + 100;
+		num3 = generator.nextInt(2532) + 3282;
+		
+		System.out.println(num1 + "-" + num2 + "-" + num3);
+		
+		/*
+		 * num1 = 38;
+		 * num2 = 51
+		 * num3 = 33;
+		 * 
+		 */
+		if(num1 < num2)
+		{
+			if(num1 < num3)
+			{
+				min = num1;
+			}
+			else
+			{
+				min = num3;
+			}
+		}
+		else
+		{
+			if(num2 < num3)
+			{
+				min = num2;
+			}
+			else
+			{
+				min = num3;
+			}
+		}
+	
+		
+		
+		
+		
+	}	
+}

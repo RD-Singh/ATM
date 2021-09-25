@@ -1,0 +1,121 @@
+//*********************************************************************************************
+// Card.java
+//
+// Harpreet Malhans T00482577
+// COMP 1131 Assignment 4 Question 2
+// Represent playing cards with faces showing values between 1 and 13 and suit values between
+// 1 and 4.
+//*********************************************************************************************
+import java.util.Random;
+
+public class Card 
+{
+	// Maximum face value, maximum suit value, and minimum face and suit value
+	private final int MAXFACE = 13;
+	private final int MAXSUIT = 4;
+	private final int MIN = 1;
+	
+	// current face and suit value showing on the card
+	private int faceValue;
+	private int suitValue;
+	private String faceText;
+	
+	private String suitResult;
+	private String faceResult;
+	
+	//----------------------------------------------------------------------------------------
+	// Constructor: sets the initial face and suit value
+	//----------------------------------------------------------------------------------------
+	public Card(int faceValue, int suits)
+	{
+		setFaceValue(faceValue);
+		setSuitValue(suits);
+		faceText = toString();
+		
+	}
+	
+	/*public Card()
+	{
+		Random generator = new Random();
+		faceValue = generator.nextInt(13) + 1; 
+		suitValue = generator.nextInt(4) + 1;
+	}
+	*/
+	//----------------------------------------------------------------------------------------
+	// Face value mutator: the face value is not modified if the specified value is not valid
+	//----------------------------------------------------------------------------------------
+	public void setFaceValue(int value)
+	{
+		if (value >= MIN && value <= MAXFACE)
+			faceValue = value;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	// Face value accessor
+	//----------------------------------------------------------------------------------------
+	public int getFaceValue()
+	{
+		return faceValue;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	// Suit value mutator
+	//----------------------------------------------------------------------------------------
+	public void setSuitValue(int value)
+	{
+		if (value >= MIN && value <= MAXSUIT)
+			suitValue = value;
+	}
+	//----------------------------------------------------------------------------------------
+	// Suit value accessor
+	//----------------------------------------------------------------------------------------
+	public int getSuitValue()
+	{
+		return suitValue;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	// Return face text on the card
+	//----------------------------------------------------------------------------------------
+	public String getFaceText()
+	{
+		return faceText;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	// Returns a string representation of the values
+	//----------------------------------------------------------------------------------------
+	public String toString()
+	{
+		faceResult = String.valueOf(faceValue);
+		suitResult = String.valueOf(suitValue);
+		
+		if (faceResult.equals("1"))
+			faceResult = "Ace";
+		
+		else if (faceResult.equals("11"))
+			faceResult = "Jack";
+		
+		else if (faceResult.equals("12"))
+			faceResult = "Queen";
+		
+		else if (faceResult.equals("13"))
+			faceResult = "King";
+		
+		if (suitResult.equals("1"))
+			suitResult = "Spades";
+		
+		else if (suitResult.equals("2"))
+			suitResult = "Hearts";
+		
+		else if (suitResult.equals("3"))
+			suitResult = "Diamonds";
+		
+		else if (suitResult.equals("4"))
+			suitResult = "Clubs";
+		
+		String deckString = new String (faceResult + " of " + suitResult);
+		return deckString;
+	}	
+	
+}

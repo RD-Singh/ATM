@@ -1,0 +1,17 @@
+
+
+
+public class Test
+{
+
+	public static void main(String[] args)
+	{
+		
+		
+		int num1 = 0;
+		int num2 = 0;
+		int num3 = (int) Math.sqrt(num1 + num2);
+		System.out.println(num3);
+		
+	}
+}			

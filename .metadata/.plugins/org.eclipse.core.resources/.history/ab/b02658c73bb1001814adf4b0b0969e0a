@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		Scanner scan = new Scanner(System.in);
+		String name1 = null, name2 = null;
+		
+		int result;
+		result = name1.compareTo(name2);
+		System.out.println("Name1: ");
+		name1 = scan.nextLine();
+		System.out.println("Name2: ");
+		name2 = scan.nextLine();
+		
+		
+		
+		
+		if (name1.compareTo(name2) < 0)
+			System.out.println(name1 + " comes before " +name2);
+		else
+			if (name1.compareTo(name2) == 0)
+				System.out.println("The names are equal.");
+			else
+			
+			System.out.println(name1 + " follows " + name2);
+		
+	}	
+}

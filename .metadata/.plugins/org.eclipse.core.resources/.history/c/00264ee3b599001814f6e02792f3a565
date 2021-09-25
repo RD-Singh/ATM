@@ -1,0 +1,23 @@
+import java.util.Random;
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Random rand = new Random();
+		int initialPosition =  rand.nextInt(10);
+		
+		int move = rand.nextInt(3);
+		
+		Bug movement = new Bug(initialPosition);
+		
+		
+		if(move == 1)
+		{
+			movement.
+		}
+	
+
+	}
+
+}

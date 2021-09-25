@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		float f1, f2;
+		
+		
+		final double TOLERANCE = 0.0001;
+		System.out.println("Enter the value of f1: ");
+		f1 = scan.nextFloat();
+		System.out.println("Enter the value of f2. ");
+		f2 = scan.nextFloat();
+		
+		System.out.println("f1: " + f1);
+		System.out.println("f2: " + f2);
+		
+		if (Math.abs(f1 - f2) < TOLERANCE);
+		
+			System.out.println("Essentially equal.");
+		
+		
+		
+		
+	}	
+}

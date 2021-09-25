@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.Random;
+
+
+public class Test 
+{
+
+
+	public static void main(String[] args)
+	{
+		
+		int num = 0;
+		do
+		{
+		   num+=2;
+		   System.out.println (num);
+		} 
+		while (num < 20);
+
+		
+		
+	}	
+}

@@ -1,0 +1,51 @@
+
+import java.util.Scanner;
+
+public class TesterDeckOfCards {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		DeckOfCards deck = new DeckOfCards();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Welcome to the deck of cards simulator.");
+		
+		String quit = "continue";
+		
+		while(!quit.equalsIgnoreCase("Quit"))
+		{
+		System.out.println("\nChoose one of the following options to continue (please either type the number to choose an option or the whole word):\n1. Shuffle Deck\n2. Deal a card\n3. Display deck\n4. Quit");
+		
+			String choice = scan.nextLine();
+			
+			if(choice.equals("Shuffle Deck") || choice.equals("1"))
+			{
+				System.out.println("Shuffling...");
+				deck.shuffle();
+			}
+			else if(choice.equals("Deal a card") || choice.equals("2"))
+			{
+				deck.deal();
+				System.out.println("This is the card that you have chosen.");
+					
+				
+			}
+			else if(choice.equals("Display Deck") || choice.equals("3"))
+			{
+				System.out.println(deck.toString());
+			}
+			else if(choice.equals("Quit") || choice.equals("4"))
+			{
+				quit = "Quit";
+			}
+			else
+			{
+				System.out.println("That was not one of the choices given. Please enter a valid option to continue:\n1. Shuffle Deck\n2. Deal a card\n3. Quit");
+				
+			}
+		
+		
+		}
+	}
+
+}

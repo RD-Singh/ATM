@@ -1,0 +1,30 @@
+import java.util.*;
+
+
+public class Test
+{
+
+	static boolean evenlyDivisible (int i, int j)
+	{ 
+	      if ( ( i == 0 ) || ( j == 0 ) )
+	         return false;
+	      if ( ( i%j == 0 ) || ( j%i == 0 ) )
+	         return true;
+
+
+	      return false;
+	}
+
+	public static void main(String[] args) 
+	{
+	   System.out.println (evenlyDivisible(1,0));	//false
+	   System.out.println (evenlyDivisible(0,1));	//false
+	   System.out.println (evenlyDivisible(15,3));	//true
+	   System.out.println (evenlyDivisible(3,15));	//true
+	   System.out.println (evenlyDivisible(18,5));	//false
+	   System.out.println (evenlyDivisible(5,18));	//false
+	}
+
+
+
+}

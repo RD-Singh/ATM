@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class casting {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter numerator: ");
+		int numerator = scan.nextInt();
+		
+		System.out.println("Enter denominator: ");
+		int denominator = scan.nextInt();
+		
+		System.out.println("This is your fraction: " + numerator + "/" + denominator + "\n");
+		
+		double decimal = (double) numerator/denominator;
+		
+		System.out.println("This is your fraction as a decimal: " + decimal);
+
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Random rand = new Random();
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("You are controlling a bug that has landed on a wire in a random position.\n You are to tell it in which direction it is to move and it will move in that direction.");
+		
+		
+		int position = rand.nextInt(50) - 25;
+		
+		Bug bug = new Bug(position, );
+
+	}
+
+}

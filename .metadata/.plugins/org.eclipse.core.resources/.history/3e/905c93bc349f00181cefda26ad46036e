@@ -1,0 +1,94 @@
+import java.util.Random;
+public class DeckOfCards {
+	
+	Random rand = new Random();
+	private Card[] cards = new Card[52];
+	private int index;
+	
+	public DeckOfCards()
+	{
+		
+		
+		int cardNumber = 0;
+		for(int suit = 0; suit <=3; suit++)
+		{
+			for(int value = 1; value<=13; value++)
+			{
+				cards[cardNumber] = new Card(value, suit);
+				cardNumber++;
+			}
+		}
+		index = 0;
+	}
+	public Card[] shuffle()
+	{
+		for(int card = 0; card < cards.length; card++)
+		{
+			int randPosition = rand.nextInt(cards.length);
+			
+			Card tempHolder = cards[card];
+			
+			cards[card] = cards[randPosition];
+			
+			cards[randPosition]  = tempHolder;			
+		}
+		
+		return cards;
+	}
+	public Card deal()
+	{
+		if(index < cards.length)
+		{
+			return cards[index++];
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public String toString()
+	{
+		int face = cards[index].getFaceValue();
+		int suit = cards[index].getSuitValue();
+		
+		String faceText = String.valueOf(face);
+		String suitText = String .valueOf(suit);
+		
+		if(suitText.equals("1"))
+		{
+			suitText = "Spades";
+		}
+		else if (suitText.equals("2"))
+		{
+			suitText = "Hearts";
+		}
+		else if (suitText.equals("3"))
+		{
+			suitText = "Diamonds";
+		}
+		else if (suitText.equals("4"))
+		{
+			suitText = "Clubs";
+		}
+		
+		if(suitText.equals("1"))
+		{
+			faceText = "Ace";
+		}
+		else if (suitText.equals("11"))
+		{
+			faceText = "Jack";
+		}
+		else if (suitText.equals("12"))
+		{
+			faceText = "Queen";
+		}
+		else if (suitText.equals("13"))
+		{
+			faceText = "King";
+		}
+		
+		return (faceText + " of " + suitText);
+	}
+}

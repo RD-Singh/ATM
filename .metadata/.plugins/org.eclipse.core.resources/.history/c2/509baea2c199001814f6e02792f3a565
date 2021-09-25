@@ -1,0 +1,85 @@
+
+public class Bug {
+	
+	private int position;
+	private int direction;
+	
+	
+	private final int MAX_POSITION = 25;
+	private final int MIN_POSITION = -25;
+
+	
+	public Bug(int currentPosition, int currentDirection)
+	{
+		setPosition(currentPosition);
+		setDirection(currentDirection);
+	}
+
+	public void setPosition(int currentPosition) {
+		position = currentPosition;
+	}
+
+	public void setDirection(int currentDirection) {
+		direction = currentDirection;
+	}
+	
+	public int getDirection() {
+		
+		return direction;
+	}
+
+	public int getPosition() {
+		
+		return position;
+	}
+	
+	public int move(int direction)
+	{
+		if(direction == 1)
+		{
+			if(position < MAX_POSITION)
+			{
+			position++;
+			}
+			else if(position == MAX_POSITION)
+			{
+				position--;
+				
+			}
+		}
+		else if(direction == 0)
+		{
+			if(position > MIN_POSITION)
+			{
+				position--;
+			}
+			else if(position == MIN_POSITION)
+			{
+				position++;
+				
+			}
+		}
+		return position;
+	}
+	
+	public String toString(int position, int direction)
+	{
+		String currentPosition = String.valueOf(position);
+		String currentDirection = String.valueOf(direction);
+		
+		if(currentDirection.equals("1"))
+		{
+			currentDirection = "The bug is moving to the right";
+		}
+		else if(currentDirection.equals("0"))
+		{
+			currentDirection = "The bug is moving to the left";
+		}
+		
+		String bugPosition = (currentDirection + " at " + currentPosition + " units from the center");
+		
+		return bugPosition;
+		
+	}
+
+}

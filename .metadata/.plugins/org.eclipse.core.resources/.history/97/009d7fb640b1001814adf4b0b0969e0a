@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		Scanner scan = new Scanner(System.in);
+		int grade, category;
+		
+		
+		
+		System.out.println("Enter a numeric grade: ");
+		grade = scan.nextInt();
+		
+		category = grade/10;
+		
+		switch (category)
+		{
+			case 10:
+				System.out.println("Well done!");
+				break;
+			
+			case 9:
+				System.out.println("excellent");
+				break;
+				
+			case 8:
+				System.out.println("nice job");
+				break;
+				
+			case 7:
+				System.out.println("average");
+				break;
+				
+			case 6:
+				System.out.println("below average");
+				break;
+				
+			default:
+				System.out.println("not passing");
+				
+				
+		}
+		
+		
+		
+	}	
+}

@@ -1,0 +1,96 @@
+//*********************************************************************************************
+// DeckOfCards.java
+//
+// Harpreet Malhans T00482577
+// COMP 1131 Assignment 5 Question 2
+// This application creates 52 different objects of the card class. Then it intends to shuffle 
+// the deck, deal a card, display the cards in the deck and tell how many cards are left in a 
+// deck.
+//*********************************************************************************************
+
+import java.util.Random;
+public class DeckOfCards {
+
+
+	Random rand = new Random();
+	private Card[] cards = new Card[52];
+	private int index;
+	
+	String result = "";
+	
+	public DeckOfCards()
+	{
+		int cardNumber = 0;
+		for(int suit = 1; suit <=4; suit++)
+		{
+			for(int value = 1; value<=13; value++)
+			{
+				cards[cardNumber] = new Card(value, suit);
+				cardNumber++;
+			}
+		}
+		index = 0;
+	}
+	
+	public Card[] shuffle()
+	{
+		for(int card = 0; card < cards.length; card++)
+		{
+			int randPosition = rand.nextInt(cards.length);
+  			
+			Card tempHolder = cards[card];
+			
+			cards[card] = cards[randPosition];
+			
+			cards[randPosition]  = tempHolder;			
+		}
+		
+		return cards;
+	} 
+	
+	public Card deal()
+	{
+		int cardsLeft = 52 - (index + 1);
+		if((index + 1) < cards.length)
+		{	
+			System.out.println("This is the card to your hand.");
+			Card temp = cards[index++];
+			
+			System.out.println("\n" + temp.toString() + "\n");
+			
+			System.out.println("There are " +  cardsLeft + " cards left in the deck");
+			return cards[index++];
+		}
+		else if (cardsLeft == 0)
+		{
+			System.out.println("There are no more cards left in the deck.");
+			return null;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public String toString()
+    {
+		String s = "";
+		int k;
+  
+		k = 0;
+ 	 
+		
+		for ( int i = 1; i <= 13; i++ )
+		{
+			for ( int j = 0; j < 4; j++ )
+			{
+				Card card = cards[k++];
+				s += (card.toString() + "  \t");
+			}
+			
+ 	    		s += "\n";
+		}
+		
+		return (s);
+    }
+}

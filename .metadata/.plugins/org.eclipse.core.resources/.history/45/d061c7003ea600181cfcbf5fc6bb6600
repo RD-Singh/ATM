@@ -1,0 +1,122 @@
+//*********************************************************************************************
+// DeckOfCards.java
+//
+// Harpreet Malhans T00482577
+// COMP 1131 Assignment 5 Question 2
+// This application creates 52 different objects of the card class. Then it intends to shuffle 
+// the deck, deal a card, display the cards in the deck and tell how many cards are left in a 
+// deck.
+//*********************************************************************************************
+
+import java.util.Random;
+public class DeckOfCards {
+
+
+	Random rand = new Random();
+	private Card[] cards = new Card[52];
+	private int index;
+	
+	String result = "";
+	
+	//----------------------------------------------------------------------------------------
+	// Constructor: creates an array which represents a deck of cards and then populates that 
+	// 				array with 52 objects of the card class each representing a playing card
+	//----------------------------------------------------------------------------------------
+	
+	public DeckOfCards()
+	{
+		int cardNumber = 0;
+		for(int suit = 1; suit <=4; suit++)
+		{
+			for(int value = 1; value<=13; value++)
+			{
+				cards[cardNumber] = new Card(value, suit);
+				cardNumber++;
+			}
+		}
+		index = 0;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	// This method takes multiple cards and flips the location of each card multiple times to 
+	// represent shuffling a deck. It does this by taking pairs of cards and flipping the 
+	// index value of each card.
+	//----------------------------------------------------------------------------------------
+	
+	public Card[] shuffle()
+	{
+		for(int card = 0; card < cards.length; card++)
+		{
+			int randPosition = rand.nextInt(cards.length);
+  			
+			Card tempHolder = cards[card];
+			
+			cards[card] = cards[randPosition];
+			
+			cards[randPosition]  = tempHolder;
+			
+		}
+		
+		return cards;
+	} 
+	
+	//----------------------------------------------------------------------------------------
+	// This method deals a card
+	//----------------------------------------------------------------------------------------
+	
+	public Card deal()
+	{
+		int cardsLeft = 52 - (index + 1);
+		if((index + 1) < cards.length)
+		{	
+			System.out.println("This is the card to your hand.");
+			
+			Card temp = cards[index];
+			
+			Card check = new Card(0,0);
+			if(temp != check)
+			{
+				System.out.println("\n" + temp.toString() + "\n");
+				
+				System.out.println("There are " +  cardsLeft + " cards left in the deck");
+				
+				cards[index] = new Card(0,0);
+			}
+			
+			return cards[index++];
+	
+		}
+		else if (cardsLeft == 0)
+		{
+			System.out.println("There are no more cards left in the deck.");
+			return null;
+		}
+		else
+		{
+			return null;
+		}
+		
+		
+	}
+
+	public String toString()
+    {
+		String result = "";
+		int index;
+  
+		index = 0;
+		
+		for ( int face = 1; face <= 4; face++ )
+		{
+			for ( int j = 1; j <= 13; j++ )
+			{
+				Card card = cards[index++];
+				
+				result += ( card.toString() + "\t");
+			}
+ 	    		result += "\n";
+		}
+		
+		return result;
+    }
+}

@@ -1,0 +1,20 @@
+import java.util.*;
+
+
+public class Test
+{
+
+	static int random100 ()
+	{ 
+	   Random rng = new Random();
+	   return (rng.nextInt(100) + 1);
+	}
+
+	public static void main(String[] args) 
+	{
+	   // enough tests that you should see 1 and 100 in the output
+	   for (int i = 1; i <= 300; i++)	
+	   	  System.out.println(random100());
+	}
+
+}

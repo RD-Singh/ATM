@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		
+		String str = "software";
+		if (str == "software")
+			System.out.println("References are the same");
+		if (str.equals("software"))
+			System.out.println("Characters are the same");	
+		
+		
+	}	
+}

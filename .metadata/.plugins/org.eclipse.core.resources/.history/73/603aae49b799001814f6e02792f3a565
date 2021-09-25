@@ -1,0 +1,57 @@
+import java.util.*;
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Random rand = new Random();
+		Scanner scan = new Scanner(System.in);
+		
+		int currentDirection = 1;
+		
+		System.out.println("You are controlling a bug that has landed on a wire in a random position.\nYou are to tell it in which direction it is to move and it will move in that direction.");
+		
+		
+		System.out.println("\nYou have two options for direction: left and right\nThis is all you have to type.");
+		String direction = scan.nextLine();
+		
+		if(direction.equalsIgnoreCase("left"))
+		{
+			currentDirection = 0;
+		}
+		else if(direction.equalsIgnoreCase("right"))
+		{
+			currentDirection = 1;
+		}
+		else
+		{
+			while(!direction.equalsIgnoreCase("left") || !direction.equalsIgnoreCase("right"))
+			{
+				System.out.println("That was not an option given for direction.\nPlease give a valid option for direction and try again.");
+				
+				direction = scan.nextLine();
+				if(direction.equalsIgnoreCase("left"))
+				{
+					currentDirection = 0;
+					break;
+				}
+				else if(direction.equalsIgnoreCase("right"))
+				{
+					currentDirection = 1;
+					break;
+				}
+				
+			}
+		}
+		
+		int position = rand.nextInt(50) - 25;
+		
+		Bug bug = new Bug(position, currentDirection);
+		
+		String bugPosition = bug.toString(bug.getDirection(), bug.getPosition());
+		
+		System.out.println(bugPosition);
+
+	}
+
+}

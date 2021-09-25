@@ -1,0 +1,19 @@
+
+
+
+public class Test
+{
+
+	public static void main(String[] args)
+	{
+		
+		
+		for (int num = 0; num <= 200; num +=2)
+			   System.out.println (num);
+
+
+
+
+		
+	}
+}			

@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+
+public class Test
+{
+
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner (System.in);
+		int num;
+		do
+		{
+		   System.out.print ("Enter an even integer: ");
+		   num = scan.nextInt();
+		} while (num%2 == 1);
+
+	}
+}			

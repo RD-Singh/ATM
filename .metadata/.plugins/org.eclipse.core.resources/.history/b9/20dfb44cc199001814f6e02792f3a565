@@ -1,0 +1,83 @@
+import java.util.*;
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Random rand = new Random();
+		Scanner scan = new Scanner(System.in);
+		
+		int currentDirection = 1;
+		String quit = "1";
+		
+		System.out.println("You are controlling a bug that has landed on a wire at a random position.\nYou are to tell it in which direction it is to move and it will move in that direction.\nThe highest position is 25 units to the right and the lowest is 25 units to the left or -25 units.");
+		
+		int position = rand.nextInt(50) - 25;
+		
+		System.out.println ("\nThe bug is starting at " + position + " units from the center.");
+		
+		System.out.println("\nKeep inputting directions until you want to quit (type 0)\nYou have two options for direction: left or right\nThis is all you have to type.\n");
+		
+		Bug bug = new Bug(position, currentDirection);
+		
+		while(quit.equals("1"))
+		{
+			String direction = scan.nextLine();
+			
+		if(direction.equalsIgnoreCase("left"))
+		{
+			currentDirection = 0;
+			bug.move(currentDirection);
+			
+		}
+		else if(direction.equalsIgnoreCase("right"))
+		{
+			currentDirection = 1;
+			bug.move(currentDirection);
+		}
+		else if(direction.equals("0"))
+		{
+			System.out.println("Thanks for playing.\nHave a nice day.");
+			quit = "0";
+		}
+		else
+		{
+			while(!direction.equalsIgnoreCase("left") || !direction.equalsIgnoreCase("right"))
+			{
+				System.out.println("That was not an option given for direction.\nPlease give a valid option for direction and try again.");
+				
+				direction = scan.nextLine();
+				if(direction.equalsIgnoreCase("left"))
+				{
+					currentDirection = 0;
+					bug.move(currentDirection);
+					break;
+				}
+				else if(direction.equalsIgnoreCase("right"))
+				{
+					currentDirection = 1;
+					bug.move(currentDirection);
+					break;
+				}
+				else if(direction.equals("0"))
+				{
+					System.out.println("Thanks for playing.\nHave a nice day.");
+					quit = "0";
+					break;
+				}
+				
+			}
+		}	
+		
+		if(quit.equals("1"))
+		{
+			String bugPosition = bug.toString(position, currentDirection);
+		
+			System.out.println(bugPosition);
+		}
+		
+		}
+	}
+
+}

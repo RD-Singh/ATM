@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+
+public class Test
+{
+
+	public static void main(String[] args)
+	{
+		int num;
+		for (num = 3; num <=300; num+=3)
+			System.out.println(num);
+	}
+}			

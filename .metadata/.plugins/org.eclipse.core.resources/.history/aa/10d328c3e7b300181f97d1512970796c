@@ -1,0 +1,22 @@
+
+
+
+public class Test
+{
+
+	public static void main(String[] args)
+	{
+		
+		
+		int num = 4, max = 20;
+		while (num < max)
+		{
+		   System.out.println (num);
+		   num += 4;
+		}
+
+
+
+		
+	}
+}			

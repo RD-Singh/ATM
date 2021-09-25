@@ -1,0 +1,22 @@
+import java.util.*;
+
+
+public class Test
+{
+
+	static void alarm (int n)
+	{ 
+	   if (n < 1)
+	      System.out.println ("Error, not a positive number");
+	   for (int i = 1; i <= n; i++)
+	      System.out.println ("Alarm!");
+	}
+
+	public static void main(String[] args) 
+	{
+	   alarm(-3);
+	   alarm(5);
+	}
+
+
+}

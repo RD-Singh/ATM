@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class Test
+{
+
+	static int countA (String str)
+	{ 
+	      int k = 0;
+	      for (int i = 0; i < str.length(); i++)
+	         if (str.charAt(i) == 'A')
+	            k++;
+	      return k;
+	}
+
+	public static void main(String[] args) 
+	{
+	   System.out.println (countA("ALL of the above"));
+	}
+	
+
+
+
+}
